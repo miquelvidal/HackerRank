@@ -24,7 +24,8 @@ public class test {
             System.out.println(0);
             return;
         }
-        for (int i = 0; i < n; i++) {
+        //leemos mientras haya numeros o ya llegueomos al max posible
+        for (int i = 0; (i < n)&&(maxUnique<m); i++) {
             int num = in.nextInt();
             //la part inicial va a part, mentres no tenim prou fem cas especial
             if (i<m) {
