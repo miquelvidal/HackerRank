@@ -45,8 +45,9 @@ public class test {
             deque.addLast(new Integer(num));
             //System.out.println(unics+" "+deque+" "+contadors);
 
-            if (unics>maxUnique) maxUnique = unics;
-
+            //if (unics>maxUnique) maxUnique = unics;
+            //algo me fa pensar que es perd info amb el contador d'unics... i voila!
+            if (contadors.size()>maxUnique) maxUnique = contadors.size();
         }
         System.out.println(maxUnique);
     }
