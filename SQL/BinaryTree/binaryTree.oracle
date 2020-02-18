@@ -1,0 +1,46 @@
+/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+
+select a.n,b.c 
+from bst a 
+left join (
+    select p ,count(*) c from bst group by p
+               
+) b
+on a.n = b.p
+order by a.n;
+
+//
+
+select a.n,nvl(b.c,'Leaf') 
+from bst a 
+left join (select p ,(count(*)) c from bst group by p) b
+on a.n = b.p
+order by a.n;
+*/
+/*
+select n,count(*)
+from bst 
+group by n 
+order by n;
+*/
+/*
+
+select a.n,b.p2
+from bst a 
+left join (select distinct p,nvl(p,-1) as p2 from bst) b
+on a.n = b.p
+order by a.n; 
+
+*/
+select a.n, 
+    case
+        when a.p is null then 'Root'
+        when b.p2 is null then 'Leaf'
+        else b.p2
+    end
+from bst a
+left join (select distinct p,'Inner' as p2 from bst where p is not null) b
+on a.n = b.p
+order by a.n;
