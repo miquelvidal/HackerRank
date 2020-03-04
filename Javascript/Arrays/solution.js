@@ -31,7 +31,7 @@ function getSecondLargest(nums) {
     // Complete the function
     let segonInt = nums[0];
     let primerInt = nums[0];
-    var fruits, text, fLen, i;
+    var fLen, i;
     
     fLen = nums.length;
 
